@@ -28,14 +28,7 @@ const Register = () => {
             alert(`There are empty fields`);
             return;
           }
-          //   // dispatch(addContact({ ...values, id: nanoid() }));
-          //   dispatch(
-          //     toCreateUser({
-          //       name: values.name,
-          //       email: values.email,
-          //       password: values.password,
-          //     })
-          //   );
+
           dispatch(toCreateUser(values));
           actions.resetForm();
         }}

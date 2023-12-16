@@ -1,7 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ContactlistButton, ContactlistList } from './Contactlist.styles';
-// import { deleteContact } from 'reduxfolder/http';
-// import { deleteContact } from '../../reduxfild/contactsSlice';
+import { ContactlistButton, ContactlistList, Name } from './Contactlist.styles';
 import { visibleArreyFilter } from 'reduxfolder/selectors';
 import { deleteContact } from 'components/toGetApi/toGetApi';
 
@@ -25,8 +23,8 @@ export const ContactList = () => {
       {visibleArrey.map(item => {
         return (
           <ContactlistList key={item.id}>
-            <p>{item.name} :</p>
-            <p> {item.number}</p>
+            <Name>{item.name} </Name>
+            <Name> {item.number}</Name>
             <ContactlistButton
               type="button"
               onClick={() => dispatch(deleteContact(item.id))}

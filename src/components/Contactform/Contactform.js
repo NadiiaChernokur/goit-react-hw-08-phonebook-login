@@ -2,6 +2,7 @@ import { Formik, Field } from 'formik';
 import { FormButton, FormContainer } from './Contactform.styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'components/toGetApi/toGetApi';
+import { useNavigate } from 'react-router-dom';
 
 // import { addContact } from '../../reduxfild/contactsSlice';
 // import { nanoid } from '@reduxjs/toolkit';
@@ -10,6 +11,7 @@ import { addContact } from 'components/toGetApi/toGetApi';
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.items);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -34,6 +36,7 @@ const ContactForm = () => {
           console.log(values);
           dispatch(addContact(values));
           actions.resetForm();
+          navigate('/contacts');
         }}
       >
         <FormContainer>

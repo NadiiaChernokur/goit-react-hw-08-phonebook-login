@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 30px;
   color: #00e6b8;
-  text-shadow: -1px -1px 0px #0411f5, 0 0 1em #3900ff, 0 0 0.2em #5500ff;
+  text-shadow: -1px -1px 0px #4c04f5, 0 0 1em #5a00ff, 0 0 0.2em #2000ff;
+  background-color: #cdb6fa;
+  font-size: 20px;
 `;
 export const Head = styled.h1`
   margin-left: 80px;
@@ -13,10 +15,27 @@ export const Head2 = styled.h2`
 `;
 export const Nav = styled.nav`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 1440px;
-  padding: 20px;
+  padding: 30px;
   font-size: 30px;
   margin: 0 auto;
+  background-color: #130138;
+  color: #00e6b8;
+  text-shadow: 3px 1px 14px #0470f5, 0 0 1em #3c00ff, 0 0 0.2em #6100ff;
+`;
+export const MeinContainer = styled.div`
+  max-width: 1000px;
+  margin: auto;
+  background-color: #cdb6fa;
+  height: 100vh;
+`;
+export const DivContact = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+`;
+export const LogoutButton = styled.button`
+  color: #ffffff;
+  background-color: #ff0066;
 `;

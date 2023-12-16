@@ -6,15 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 // import { fetchContacts } from 'reduxfolder/http';
 // import Header from './Header/Header';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import PhoneContainer from './Container';
 // import Register from './Register/Register';
 // import Login from './Login/Login';
-import { Nav } from './Appstyles/App.styles';
+// import { Nav } from './Appstyles/App.styles';
 // import Hallo from './Hallo';
-import LogOut from './LogOut';
-import React, { Suspense } from 'react';
+// import LogOut from './LogOut';
+import React from 'react';
 import { refreshUser } from './toGetApi/toGetApi';
+import SharedLayout from './SharedLayout';
+import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import LogOut from './LogOut';
 
 const Hallo = React.lazy(() => import('./Hallo'));
 const Register = React.lazy(() => import('./Register/Register'));
@@ -30,39 +34,51 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <div>load....</div>
+  ) : (
     <>
-      {isRefreshing ? (
-        <div>load....</div>
-      ) : (
-        <Suspense>
-          <Nav>
-            <NavLink to="/"></NavLink>
-            <NavLink to="/contacts">Mein Contacts</NavLink>
-            <NavLink to="/createcontact">Create contact</NavLink>
-            <NavLink to="/register">Register</NavLink>
-            <NavLink to="/login">Login</NavLink>
-            <LogOut />
-          </Nav>
-          <Routes>
-            <Route path="/" element={<Hallo />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/contacts" element={<PhoneContainer />} />
-            <Route path="/createcontact" element={<ContactForm />} />
-            {/* <Route path="/register" element={<Register />}/> */}
-          </Routes>
-        </Suspense>
-      )}
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Hallo />} />
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<Register />}
+              />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            }
+          />
+          <Route
+            path="logout"
+            element={
+              <PrivateRoute redirectTo="/login" component={<LogOut />} />
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute
+                redirectTo="/login"
+                component={<PhoneContainer />}
+              />
+            }
+          />
+          <Route
+            path="createcontact"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactForm />} />
+            }
+          />
+        </Route>
+      </Routes>
     </>
-    // <Container>
-    //   <Header />
-    //   <Head>Phonebook</Head>
-    //   <ContactForm />
-
-    //   <Head2>Contacts</Head2>
-    //   <Filter />
-    //   {contacts && <ContactList />}
-    // </Container>
   );
 };

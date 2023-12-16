@@ -1,6 +1,6 @@
 import { Container, Head, Head2 } from './Appstyles/App.styles';
 import { Filter } from './Filter/Filter';
-import { ContactForm } from './Contactform/Contactform';
+// import { ContactForm } from './Contactform/Contactform';
 // import Header from './Header/Header';
 import { ContactList } from './Contactlist/Contactlist';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +23,7 @@ const PhoneContainer = () => {
   return (
     <Container>
       {/* <Header /> */}
-      <Head>Phonebook</Head>
+      {/* <Head>Phonebook</Head> */}
       {/* <ContactForm /> */}
 
       <Head2>Contacts</Head2>
