@@ -8,8 +8,18 @@ export const Container = styled.div`
   font-size: 20px;
 `;
 export const Head = styled.h1`
-  margin-left: 80px;
+  font-size: 50px;
+  color: #00e6b8;
+  text-shadow: -1px -1px 0px #4c04f5, 0 0 1em #5a00ff, 0 0 0.2em #2000ff;
 `;
+export const HalloContainer = styled.div`
+  text-align: center;
+`;
+export const Text = styled.p`
+  font-size: 30px;
+  background-color: #cdb6fa;
+`;
+
 export const Head2 = styled.h2`
   margin-left: 80px;
 `;
