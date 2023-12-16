@@ -9,7 +9,7 @@ const Hallo = () => {
     <HalloContainer>
       <Head>Phonebook</Head>
       {isLoggedIn ? (
-        <div>Hallo, {userName}</div>
+        <Text>Hallo, {userName}</Text>
       ) : (
         <Text>
           Welcome to our website! If you are here for the first time, go through

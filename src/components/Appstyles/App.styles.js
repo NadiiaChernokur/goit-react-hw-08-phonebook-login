@@ -27,7 +27,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 16px;
   font-size: 30px;
   margin: 0 auto;
   background-color: #130138;
@@ -44,8 +44,15 @@ export const DivContact = styled.div`
   display: flex;
   gap: 20px;
   align-items: flex-end;
+  align-items: center;
 `;
 export const LogoutButton = styled.button`
   color: #ffffff;
   background-color: #ff0066;
+  margin-top: 5px;
+`;
+export const UserNameHeader = styled.h3`
+  color: #ff0066;
+  font-size: 26px;
+  padding: 0;
 `;

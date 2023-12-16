@@ -20,3 +20,7 @@ a {
   text-decoration: none;
   color: aqua;
 }
+h3 {
+  padding: 0;
+  margin: 0;
+}
