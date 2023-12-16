@@ -12,8 +12,3 @@ export const userInitialState = {
   isLoggedIn: false,
   isRefreshing: false,
 };
-
-// export const loginInitialState = {
-//   userLog: '',
-//   pending: false,
-// };

@@ -20,7 +20,6 @@ export const registerSlice = createSlice({
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
-        console.log(action.payload);
         state.isLoggedIn = true;
       })
       .addCase(logOut.fulfilled, state => {
@@ -33,7 +32,6 @@ export const registerSlice = createSlice({
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.user = action.payload;
-
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })

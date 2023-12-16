@@ -13,11 +13,9 @@ const clearToken = () => {
 export const toCreateUser = createAsyncThunk(
   'user/register',
   async (credentials, thunkAPI) => {
-    console.log(credentials);
     try {
       const response = await axios.post('/users/signup', credentials);
 
-      console.log(response);
       safeToken(response.data.token);
       return response.data;
     } catch (error) {
@@ -86,7 +84,7 @@ export const addContact = createAsyncThunk(
         name: name,
         number: number,
       });
-      console.log(response);
+
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

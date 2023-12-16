@@ -4,7 +4,7 @@ import { HalloContainer, Head, Text } from './Appstyles/App.styles';
 const Hallo = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   const userName = useSelector(state => state.user.user.name);
-  console.log(userName);
+
   return (
     <HalloContainer>
       <Head>Phonebook</Head>

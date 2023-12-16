@@ -18,7 +18,7 @@ const UserMenu = () => {
         <DivContact>
           <NavLink to="/contacts">Mein Contacts</NavLink>
           <NavLink to="/createcontact">Create contact</NavLink>
-          {/* <NavLink to="/logout">Logout</NavLink> */}
+
           <LogoutButton type="button" onClick={() => dispatch(logOut())}>
             Logout
           </LogoutButton>

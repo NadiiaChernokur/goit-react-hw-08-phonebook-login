@@ -4,10 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'components/toGetApi/toGetApi';
 import { useNavigate } from 'react-router-dom';
 
-// import { addContact } from '../../reduxfild/contactsSlice';
-// import { nanoid } from '@reduxjs/toolkit';
-// import { addContact } from 'reduxfolder/http';
-
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.items);

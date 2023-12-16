@@ -5,7 +5,6 @@ import {
 } from 'components/toGetApi/toGetApi';
 import { contactsInitialState } from '../initialState';
 import { createSlice } from '@reduxjs/toolkit';
-// import { addContact, deleteContact, fetchContacts } from '../http';
 
 const handleRejected = (state, action) => {
   state.isLoading = false;

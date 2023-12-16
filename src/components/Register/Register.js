@@ -18,8 +18,6 @@ const Register = () => {
           password: '',
         }}
         onSubmit={(values, actions) => {
-          console.log(values);
-
           if (
             values.name === '' ||
             values.email === '' ||
